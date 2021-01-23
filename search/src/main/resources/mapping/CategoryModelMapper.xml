@@ -146,4 +146,9 @@
         sort = #{sort,jdbcType=INTEGER}
         where id = #{id,jdbcType=INTEGER}
     </update>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*)
+        from category
+    </select>
 </mapper>

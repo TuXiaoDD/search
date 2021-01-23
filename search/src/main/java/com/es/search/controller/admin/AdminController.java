@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import com.es.search.common.AdminPermission;
 import com.es.search.common.BusinessException;
 import com.es.search.common.EmBusinessError;
+import com.es.search.service.CategoryService;
+import com.es.search.service.SellerService;
+import com.es.search.service.ShopService;
 import com.es.search.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -39,6 +42,12 @@ public class AdminController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private SellerService sellerService;
+    @Autowired
+    private CategoryService categoryService;
+    @Autowired
+    private ShopService shopService;
 
 
     public static final String CURRENT_ADMIN_SESSION = "currentAdminSession";
@@ -49,6 +58,9 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView("/admin/admin/index");
 
         modelAndView.addObject("userCount", userService.countAllUser());
+        modelAndView.addObject("sellerCount", sellerService.countAllSeller());
+        modelAndView.addObject("categoryCount", categoryService.countAllCategory());
+        modelAndView.addObject("shopCount", shopService.countAllShop());
         modelAndView.addObject("CONTROLLER_NAME", "admin");
         modelAndView.addObject("ACTION_NAME", "index");
         return modelAndView;
@@ -85,7 +97,7 @@ public class AdminController {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        AdminController adminController=new AdminController();
+        AdminController adminController = new AdminController();
         System.out.println(adminController.encodeByMd5("123456"));
 
     }

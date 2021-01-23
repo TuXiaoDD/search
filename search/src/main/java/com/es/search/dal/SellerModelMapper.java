@@ -55,4 +55,6 @@ public interface SellerModelMapper {
      * @mbg.generated Fri Jul 19 12:00:18 CST 2019
      */
     int updateByPrimaryKey(SellerModel record);
+
+    Integer selectCount();
 }

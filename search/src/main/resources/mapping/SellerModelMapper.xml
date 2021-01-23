@@ -40,6 +40,10 @@
         from seller
         order by id ASC
     </select>
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*)
+        from seller
+    </select>
 
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

@@ -31,4 +31,9 @@ public class CategoryServiceImpl implements CategoryService {
     public List<CategoryModel> selectAll() {
         return categoryModelMapper.selectAll();
     }
+
+    @Override
+    public Integer countAllCategory() {
+        return categoryModelMapper.selectCount();
+    }
 }
