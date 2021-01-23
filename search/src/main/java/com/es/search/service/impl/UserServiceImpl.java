@@ -14,6 +14,7 @@ import sun.misc.BASE64Encoder;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -65,7 +66,7 @@ public class UserServiceImpl implements UserService {
         //确认计算方法MD5
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
         BASE64Encoder base64Encoder = new BASE64Encoder();
-        return base64Encoder.encode(messageDigest.digest(str.getBytes("utf-8")));
+        return base64Encoder.encode(messageDigest.digest(str.getBytes(StandardCharsets.UTF_8)));
 
     }
 

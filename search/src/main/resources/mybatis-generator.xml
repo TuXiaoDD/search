@@ -6,10 +6,10 @@
 
     <context id="DB2Tables"    targetRuntime="MyBatis3">
         <!--数据库链接地址账号密码-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.10:3306/search" userId="root" password="123456">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.10:3306/search" userId="root" password="123456">
         </jdbcConnection>
         <!--生成DataObject类存放位置-->
-        <javaModelGenerator targetPackage="com.es.search.model.UserModel" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.es.search.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -36,7 +36,7 @@
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"></table>
         -->
-        <table tableName="user"  domainObjectName="UserModel" enableCountByExample="false"
+        <table tableName="category"  domainObjectName="CategoryModel" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="MySql" identity="true" />
