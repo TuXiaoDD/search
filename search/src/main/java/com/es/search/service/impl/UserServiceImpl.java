@@ -70,4 +70,9 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        UserServiceImpl userService=new UserServiceImpl();
+        System.out.println(userService.encodeByMd5("123456789"));
+    }
+
 }
